@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<center>
+  <title>Yes or No Tarot</title>
+	<h1>Yes or No Tarot</h1>
+	<h3>Breathe in, and breathe out.</h3>
+	<h3>Now pick a card</h3>
+
+<h4>The answer is: </h4>
+<div class="explanation">
+<p id ='card-explanation'>Pick a card to reveal</p>
+
+</div>
+</center>
+
+  <style>
+     body {
+      background-color: black;
+      color: white;
+      font-family: American Typewriter, serif;
+      font-variant: small-caps;
+      text-align: center; /* Center align the content */
+    }
+    .container {
+      display: grid;
+      grid-template-columns: repeat(11, 100px); /* Align cards in rows of eleven */
+      gap: 10px;
+      justify-content: center;
+      padding: 20px;
+      margin-bottom: 20px; /* Add space at the bottom */
+    }
+    .card {
+      width: 100px;
+      height: 150px;
+      border: 2px solid white;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: background-color 0.3s ease;
+    }
+    .card:hover {
+      background-color: rgba(255, 255, 255, 0.3);
+    }
+    .card img {
+      max-width: 100%;
+      max-height: 100%;
+    }
+    .button-container {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
+    .button {
+      padding: 10px 20px;
+      background-color: white;
+      color: black;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .button:hover {
+      background-color: #e0e0e0;
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+  <div class="container" id="tarotContainer">
+
+    <!-- Tarot Cards -->
+ 
+    <div class="card" data-card="The Temperance">
+      <img src="https://cdn.create.vista.com/api/media/small/528163372/stock-vector-space-esoteric-composition-sun-moon-stars" alt="The Temperance">
+    </div>
+    <div class="card" data-card="The Magician">
+      <img src="https://cdn.create.vista.com/api/media/small/528163372/stock-vector-space-esoteric-composition-sun-moon-stars" alt="The Magician">
+    </div>
+    <!-- Add other card elements similarly -->
+    <div class="card" data-card="The Devil">
+      <img src="https://cdn.create.vista.com/api/media/small/528163372/stock-vector-space-esoteric-composition-sun-moon-stars" alt="The Devil">
+    </div>
+    <div class="card" data-card="Justice">
+      <img src="https://cdn.create.vista.com/api/media/small/528163372/stock-vector-space-esoteric-composition-sun-moon-stars" alt="Justice">
+    </div>
+    <div class="card" data-card="The Empress">
+      <img src="https://cdn.create.vista.com/api/media/small/528163372/stock-vector-space-esoteric-composition-sun-moon-stars" alt="The Empress">
+    </div>
+    <div class="card" data-card="Death">
+      <img src="https://cdn.create.vista.com/api/media/small/528163372/stock-vector-space-esoteric-composition-sun-moon-stars" alt="Death">
+    </div>
+    <div class="card" data-card="The Emperor">
+      <img src="https://cdn.create.vista.com/api/media/small/528163372/stock-vector-space-esoteric-composition-sun-moon-stars" alt="The Emperor">
+    </div>
+    <div class="card" data-card="The Pope">
+      <img src="https://cdn.create.vista.com/api/media/small/528163372/stock-vector-space-esoteric-composition-sun-moon-stars" alt="The Pope">
+    </div>
+    <div class="card" data-card="The High Priestess">
+      <img src="https://cdn.create.vista.com/api/media/small/528163372/stock-vector-space-esoteric-composition-sun-moon-stars" alt="The High Priestess">
+    </div>
+    <div class="card" data-card="The Hanged Man">
+      <img src="https://cdn.create.vista.com/api/media/small/528163372/stock-vector-space-esoteric-composition-sun-moon-stars" alt="The Hanged Man">
+    </div>
+    <div class="card" data-card="The Sun">
+      <img src="https://cdn.create.vista.com/api/media/small/528163372/stock-vector-space-esoteric-composition-sun-moon-stars" alt="The Sun">
+    </div>
+    <div class="card" data-card="The Star">
+      <img src="https://cdn.create.vista.com/api/media/small/528163372/stock-vector-space-esoteric-composition-sun-moon-stars" alt="The Star">
+    </div>
+    <div class="card" data-card="The World">
+      <img src="https://cdn.create.vista.com/api/media/small/528163372/stock-vector-space-esoteric-composition-sun-moon-stars" alt="The World">
+    </div>
+    <div class="card" data-card="Judgement">
+      <img src="https://cdn.create.vista.com/api/media/small/528163372/stock-vector-space-esoteric-composition-sun-moon-stars" alt="Judgement">
+    </div>
+    <div class="card" data-card="The Justice">
+      <img src="https://cdn.create.vista.com/api/media/small/528163372/stock-vector-space-esoteric-composition-sun-moon-stars" alt="The Justice">
+    </div>
+    <div class="card" data-card="The Wheel of Fortune">
+      <img src="https://cdn.create.vista.com/api/media/small/528163372/stock-vector-space-esoteric-composition-sun-moon-stars" alt="The Wheel of Fortune">
+    </div>
+    <div class="card" data-card="The Chariot">
+      <img src="https://cdn.create.vista.com/api/media/small/528163372/stock-vector-space-esoteric-composition-sun-moon-stars" alt="The Chariot">
+    </div>
+    <div class="card" data-card="Strength">
+      <img src="https://cdn.create.vista.com/api/media/small/528163372/stock-vector-space-esoteric-composition-sun-moon-stars" alt="Strength">
+    </div>
+    <div class="card" data-card="The Fool">
+      <img src="https://cdn.create.vista.com/api/media/small/528163372/stock-vector-space-esoteric-composition-sun-moon-stars" alt="The Fool">
+    </div>
+    <div class="card" data-card="The Lovers">
+      <img src="https://cdn.create.vista.com/api/media/small/528163372/stock-vector-space-esoteric-composition-sun-moon-stars" alt="The Lovers">
+    </div>
+    <div class="card" data-card="The Hermit">
+      <img src="https://cdn.create.vista.com/api/media/small/528163372/stock-vector-space-esoteric-composition-sun-moon-stars" alt="The Hermit">
+    </div>
+    <div class="card" data-card="The Tower">
+      <img src="https://cdn.create.vista.com/api/media/small/528163372/stock-vector-space-esoteric-composition-sun-moon-stars" alt="The Tower">
+    </div>
+  </div>
+
+ <div class="explanation-container">
+    <p id="card-explanation">Pick a card to reveal</p>
+    <div id="revealed-card" style="display: none;">
+      <h3 id="revealed-card-name"></h3>
+      <img id="revealed-card-image" src="" alt="Revealed Card">
+    </div>
+  </div>
+
+  <script>
+    const cards = [
+      "The Temperance", "The Magician", "The Devil", "Justice", "The Empress",
+      "Death", "The Emperor", "The Pope", "The High Priestess", "The Hanged Man",
+      "The Sun", "The Star", "The World", "Judgement", "The Justice", "The Wheel of Fortune",
+      "The Chariot", "Strength", "The Fool", "The Lovers", "The Hermit", "The Tower"
+    ];
+
+   const explanations = {
+  "The Temperance": {
+    yes: "Yes, take a balanced approach and find harmony in your situation.",
+    no: "No, there is imbalance or discord present. Seek to restore harmony first."
+  },
+  "The Magician": {
+    yes: "Yes, you have the power and skills to make it happen.",
+    no: "No, you may lack the necessary resources or focus at this time."
+  },
+  "The Devil": {
+    yes: "Yes, but be cautious of temptation or negative influences.",
+    no: "No, there are obstacles or unhealthy attachments in your way."
+  },
+   "The Empress": {
+    yes: "Yes, nurture your ideas and projects as they have growth potential.",
+    no: "No, focus on self-care and stability before proceeding."
+  },
+  "Death": {
+    yes: "Yes, embrace change and transformation for new beginnings.",
+    no: "No, it's time to let go of what no longer serves you."
+  },
+  "The Emperor": {
+    yes: "Yes, take charge with authority and structure.",
+    no: "No, consider if your approach is too rigid or controlling."
+  },
+  "The Pope": {
+    yes: "Yes, seek guidance from trusted sources or wisdom traditions.",
+    no: "No, you may need to question established beliefs or authority figures."
+  },
+  "The High Priestess": {
+    yes: "Yes, trust your intuition and inner knowledge.",
+    no: "No, there may be hidden factors or mysteries to uncover."
+  },
+  "The Hanged Man": {
+    yes: "Yes, embrace a different perspective or pause for reflection.",
+    no: "No, there may be delays or sacrifices required before progress."
+  },
+  "The Sun": {
+    yes: "Yes, bright opportunities and success are on the horizon.",
+    no: "No, there may be temporary setbacks or obstacles to overcome."
+  },
+  "The Star": {
+    yes: "Yes, have hope and follow your dreams with optimism.",
+    no: "No, you may need to reassess your goals or expectations."
+  },
+  "The World": {
+    yes: "Yes, completion and fulfillment are within reach.",
+    no: "No, there may be unfinished business or challenges ahead."
+  },
+  "Judgement": {
+    yes: "Yes, it's time for self-reflection and making amends.",
+    no: "No, avoid rushing into decisions or being overly critical."
+  },
+  "The Justice": {
+    yes: "Yes, fairness and truth will prevail.",
+    no: "No, be wary of imbalances or unresolved conflicts."
+  },
+  "The Wheel of Fortune": {
+    yes: "Yes, embrace change and cycles of life with optimism.",
+    no: "No, be cautious of unpredictability or unexpected changes."
+  },
+  "The Chariot": {
+    yes: "Yes, move forward with confidence and determination.",
+    no: "No, reassess your direction or approach before proceeding."
+  },
+  "Strength": {
+    yes: "Yes, have courage and resilience to overcome challenges.",
+    no: "No, focus on inner strength and patience before taking action."
+  },
+  "The Fool": {
+    yes: "Yes, take a leap of faith and embrace new adventures.",
+    no: "No, consider potential risks or consequences before acting impulsively."
+  },
+  "The Lovers": {
+    yes: "Yes, follow your heart and make choices based on love and harmony.",
+    no: "No, there may be conflicts or choices that require careful consideration."
+  },
+  "The Hermit": {
+    yes: "Yes, seek solitude for introspection and inner guidance.",
+    no: "No, avoid isolation or withdrawal; seek support and connection."
+  },
+  "The Tower": {
+    yes: "Yes, embrace necessary upheavals or changes for growth.",
+    no: "No, be cautious of sudden disruptions or unexpected challenges."
+  }
+};
+
+const cardImages = {
+  "The Temperance": "https://i.pinimg.com/564x/c3/fd/a5/c3fda5a346daa90d8af63b50f4299824.jpg",
+  "The Magician": "https://i.pinimg.com/236x/61/3d/27/613d274a254cb116a98fe2dd3ab93300.jpg",
+  "The Devil": "https://i.pinimg.com/236x/46/b8/12/46b8123851c9ebc5d085e984b47f6817.jpg",
+   "The Empress": "https://i.pinimg.com/236x/71/7b/89/717b89a1ec6d3f2dd62c22b80cd420c8.jpg",
+  "Death": "https://i.pinimg.com/236x/fa/e0/5c/fae05cb34f7c0460577fa4c541005102.jpg",
+  "The Emperor": "https://i.pinimg.com/236x/ae/b3/8a/aeb38a0dde4824642ab1a858cb950fff.jpg",
+  "The Pope": "https://i.pinimg.com/564x/7d/eb/97/7deb97f9c3e3961841b733cf1f56b57b.jpg",
+  "The High Priestess": "https://i.pinimg.com/236x/e3/fe/a3/e3fea349eae73a963b8c8bc3feb9e0b3.jpg",
+  "The Hanged Man": "https://i.pinimg.com/236x/58/4e/b2/584eb27d92d0210b3eac93e2768e3015.jpg",
+  "The Sun": "https://i.pinimg.com/236x/8e/33/db/8e33db73753fd812180b0835ec1cfc58.jpg",
+  "The Star": "https://i.pinimg.com/564x/a9/91/97/a991978ee9f4c958e67f0b8766078f98.jpg",
+  "The World": "https://i.pinimg.com/236x/98/c0/45/98c045bfd7c2865533e02cc8b4231478.jpg",
+  "Judgement": "https://i.pinimg.com/236x/1a/7e/19/1a7e19dfd36655b1f3da6b29c1c72c3a.jpg",
+  "The Justice": "https://i.pinimg.com/564x/a4/f3/7b/a4f37bfeb1965c20d51354e584e5c433.jpg",
+  "The Wheel of Fortune": "https://i.pinimg.com/236x/f5/3e/7e/f53e7eaa7e3499c5a3719de201af8e4d.jpg",
+  "The Chariot": "https://i.pinimg.com/564x/25/2b/85/252b8599d693b38f1869f3ef77c644ff.jpg",
+  "Strength": "https://i.pinimg.com/236x/9d/6c/6e/9d6c6efa0cc8e7cd7322055dd5bec617.jpg",
+  "The Fool": "https://i.pinimg.com/236x/25/2b/85/252b8599d693b38f1869f3ef77c644ff.jpg",
+  "The Lovers": "https://i.pinimg.com/236x/9d/dd/eb/9dddeb219d90a2129be122a9587e24e8.jpg",
+  "The Hermit": "https://i.pinimg.com/236x/af/0b/0d/af0b0de624e8f26fe2bb80d349e97706.jpg",
+  "The Tower": "https://i.pinimg.com/236x/7e/06/c4/7e06c40b313539dfeee73ad86c4ffdde.jpg"
+};
+
+ let clickCounter = 0;
+    function shuffle(array) {
+      for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+      }
+    }
+
+      function pickCard() {
+
+ 	 clickCounter++; // Increment click counter on each click
+
+      if (clickCounter > 3) {
+        alert("If you have clicked three times and haven't gotten an answer, you already know what you should do. Go ahead and do it, the universe is with you!");
+        return;
+      }
+
+      shuffle(cards);
+      const randomCard = cards[Math.floor(Math.random() * cards.length)];
+      const response = Math.random() < 0.5 ? 'yes' : 'no';
+      const explanation = explanations[randomCard][response];
+
+      const explanationElement = document.getElementById('card-explanation');
+      explanationElement.textContent = `You picked "${randomCard}":\n\n${explanation}`;
+
+      const revealedCardName = document.getElementById('revealed-card-name');
+      revealedCardName.textContent = randomCard;
+
+      const revealedCardImage = document.getElementById('revealed-card-image');
+      revealedCardImage.src = cardImages[randomCard];
+
+      const revealedCardContainer = document.getElementById('revealed-card');
+      revealedCardContainer.style.display = 'block';
+    }
+
+
+    const cardElements = document.querySelectorAll('.card');
+    cardElements.forEach(card => card.addEventListener('click', pickCard));
+  </script>
+</body>
+</html>
